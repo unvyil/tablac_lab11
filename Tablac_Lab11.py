@@ -1,4 +1,5 @@
 # VARIABLES
+
 grades = []
 num_student = 1
 students_passed = 0 
@@ -6,6 +7,7 @@ total = 0
 loop = True
 
 # INPUT GRADES
+
 while loop == True:
         grade_input = input(f"Enter the grade for Student {num_student}: ")
         if grade_input.replace(".", "", 1).isdigit() and grade_input.count(".") <= 1:
@@ -14,7 +16,6 @@ while loop == True:
                 grades.append(grade_input)
                 num_student += 1
                 continue
-    
             else:
                 print("Error: Invalid input (must be between 40 and 100). Try again.")
                 continue
@@ -23,7 +24,9 @@ while loop == True:
         else:
             print("Error: Invalid input. Please enter a valid number.")
             continue
+        
 else:
+    
     if grades != []:
         for grade in grades:
             total += grade
@@ -37,5 +40,6 @@ else:
             print(f"Number of students who passed: {students_passed}")
             passing_percentage = (students_passed / len(grades)) * 100
             print(f"Passing percentage: {passing_percentage:.2f}%")
+            
     else:
         print("No grades were entered.")
