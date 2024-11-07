@@ -9,7 +9,7 @@ loop = True
 # INPUT GRADES
 
 while loop == True:
-        grade_input = input(f"Enter the grade for Student {num_student}: ")
+        grade_input = input(f"\nEnter the grade for Student {num_student}: ")
         if grade_input.replace(".", "", 1).isdigit() and grade_input.count(".") <= 1:
             grade_input = float(grade_input)
             if grade_input >= 40 and grade_input <= 100:
@@ -28,18 +28,18 @@ while loop == True:
 else:
     
     if grades != []:
-        for grade in grades:
-            total += grade
+        for studgrade in grades:
+            total += studgrade
             average_grade = total / len(grades)
         else:
-            print(f"The average grade of the students: {average_grade:.2f}")
-        for grade in grades:
-            if grade >= 75:
+            print(f"\n~.~.~.~.~""\n \nThe average grade of the students: {average_grade:.2f}")
+        for studgrade in grades:
+            if studgrade >= 75:
                 students_passed += 1
         else:
-            print(f"Number of students who passed: {students_passed}")
+            print(f"\nNumber of students who passed: {students_passed}")
             passing_percentage = (students_passed / len(grades)) * 100
-            print(f"Passing percentage: {passing_percentage:.2f}%")
+            print(f"\nPassing percentage: {passing_percentage:.2f}%")
             
     else:
         print("No grades were entered.")
